@@ -90,7 +90,7 @@ void QuickSort (char **V, int ini, int fim)
 
 void Merge (char **V, int ini, int fim, int n)
 {
-   char T[n][55];   // temporario
+   static char T[10000000][55];   // temporario
    int med,
        i,     // percorre T
        j,     // percorre lado esquerdo de V

@@ -35,7 +35,7 @@ int main(){
 	inicio = clock();
 	BubbleSort(V,tam);
 	fim=clock();
-	printf("%d\n%.3f",contador, (fim - inicio)/ (float) CLOCKS_PER_SEC);
+	printf("%d %.3f",contador, (fim - inicio)/ (float) CLOCKS_PER_SEC);
 
 
 	return 0;
