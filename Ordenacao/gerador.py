@@ -3,7 +3,7 @@ f=open("entrada3.txt","w")
 
 alph="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
-n=random.randint(0,10000)
+n=int(input())
 
 f.write(str(n)+"\n")
 

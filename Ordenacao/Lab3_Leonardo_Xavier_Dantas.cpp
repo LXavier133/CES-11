@@ -13,17 +13,17 @@
 #include <time.h>
 #include <cstring>
 
-int contador=0;
+int contador=0; //contador global para poder ser alterado em todas as funcoes
 
-int compara (const char * a, const char * b)
+int compara (const char * a, const char * b) //funcao compara como especificado
 {
 contador ++;
 return strcmp (a, b);
 }
 
-void BubbleSort(char **V, int n){
-	for(int p=0; p<n-1; p++)
-		for(int i=0; i<n-1; i++)
+void BubbleSort(char **V, int n){ 
+	for(int p=0; p<n-1; p++) //etapa atual, para garantir a ordem, n-1 vezes
+		for(int i=0; i<n-1; i++) //compara todos os pares e troca caso estejam em ordem errada
 			if(compara(V[i],V[i+1])>0){
 				char aux[55];
 				strcpy(aux,V[i+1]);
@@ -32,9 +32,9 @@ void BubbleSort(char **V, int n){
 			}
 }
 
-
+//---------------------------------------------------------------
 //CODIGO DO ARMANDO DE QUICKSORT
-
+//---------------------------------------------------------------
 int Partition (char **V, int ini, int fim)
 {
    char pivo[55], aux[55];
@@ -81,8 +81,12 @@ void QuickSort (char **V, int ini, int fim)
    }
 }
 
-//CODIGO DO ARMANDO PARA MERGESORT
 
+
+
+//-----------------------------------------------------------
+//CODIGO DO ARMANDO PARA MERGESORT
+//-----------------------------------------------------------
 
 void Merge (char **V, int ini, int fim, int n)
 {
@@ -143,57 +147,83 @@ void MergeSort (char **V, int ini, int fim, int n)
    }
 }
 
+
+
+//--------------------------------------------------------------------
+
+
+
+
 int main(){
-	FILE *entra = fopen("entrada3.txt", "r");
-	FILE *saidaB = fopen("Lab3_Leonardo_Xavier_Dantas_bubble.txt", "w");
-	FILE *saidaM = fopen("Lab3_Leonardo_Xavier_Dantas_merge.txt", "w");
-	FILE *saidaQ = fopen("Lab3_Leonardo_Xavier_Dantas_quick.txt", "w");
+	
+	//abertura dos arquivos de entrada e saida
+	FILE 	*entra = fopen("entrada3.txt", "r"),
+		*saidaB = fopen("Lab3_Leonardo_Xavier_Dantas_bubble.txt", "w"),
+		*saidaM = fopen("Lab3_Leonardo_Xavier_Dantas_merge.txt", "w"),
+		*saidaQ = fopen("Lab3_Leonardo_Xavier_Dantas_quick.txt", "w");
+	
+	//leitura do tamanho do array de strings
 	int tam;
 	fscanf(entra,"%d",&tam);
-	char ** VB=(char **) malloc(tam*sizeof(char *));
-	char ** VM=(char **) malloc(tam*sizeof(char *));
-	char ** VQ=(char **) malloc(tam*sizeof(char *));
+	
+
+	//dois vetores, um que vai manter a ordem original e um que vai mudar por ordenacao
+	char 	** Vfixo=(char **) malloc(tam*sizeof(char *)),
+		** Vmuda=(char **) malloc(tam*sizeof(char *));
+	
+	//leitura dos valores, tamanho das strings
 	for(int i=0; i<tam; i++){
-		VB[i]=(char *) malloc(55*sizeof(char));
-		VM[i]=(char *) malloc(55*sizeof(char));
-		VQ[i]=(char *) malloc(55*sizeof(char));
-		fscanf(entra,"%s",VB[i]);
-		strcpy(VM[i],VB[i]);
-		strcpy(VQ[i],VB[i]);
+		Vfixo[i]=(char *) malloc(55*sizeof(char));
+		Vmuda[i]=(char *) malloc(55*sizeof(char));
+		fscanf(entra,"%s",Vfixo[i]);
 	}
 	
-	fclose(entra);	
+	fclose(entra);	//fecha a entrada que nao sera mais usada
 		
-	clock_t inicio,fim;
+
+	//inicia os medidores de tempo
+	clock_t inicio,
+		fim;
 	
+
+	//o restante do codigo eh bem igual, zera o contador, transfere de vfixo pra vmuda, inicia tempo, ordena, finaliza tempo, escreve arquivo, fecha
 	
+	for(int i=0; i<tam; i++)
+		strcpy(Vmuda[i],Vfixo[i]);
 	inicio = clock();
-	MergeSort(VM,0,tam-1,tam);
+	MergeSort(Vmuda,0,tam-1,tam);
 	fim=clock();
 	fprintf(saidaM,"Algoritmo: Merge-Sort\n\nTamanho da entrada: %d\nComparações feitas: %d\nTempo de execução : %.3f segundos\n\n--------------------------------------------------\n",tam,contador, (fim - inicio)/ (float) CLOCKS_PER_SEC);
 	for(int i=0; i<tam; i++)
-		fprintf(saidaM,"%s\n",VM[i]);
+		fprintf(saidaM,"%s\n",Vmuda[i]);
 	fclose(saidaM);
 	
 	
+	
+	for(int i=0; i<tam; i++)
+		strcpy(Vmuda[i],Vfixo[i]);
 	contador=0;
 	inicio = clock();
-	QuickSort(VQ,0,tam-1);
+	QuickSort(Vmuda,0,tam-1);
 	fim=clock();
 	fprintf(saidaQ,"Algoritmo: Quick-Sort\n\nTamanho da entrada: %d\nComparações feitas: %d\nTempo de execução : %.3f segundos\n\n--------------------------------------------------\n",tam,contador, (fim - inicio)/ (float) CLOCKS_PER_SEC);
 	for(int i=0; i<tam; i++)
-		fprintf(saidaQ,"%s\n",VQ[i]);
+		fprintf(saidaQ,"%s\n",Vmuda[i]);
 	fclose(saidaQ);
 	
 	
+	
+	for(int i=0; i<tam; i++)
+		strcpy(Vmuda[i],Vfixo[i]);
 	contador=0;
 	inicio = clock();
-	BubbleSort(VB,tam);
+	BubbleSort(Vmuda,tam);
 	fim=clock();
 	fprintf(saidaB,"Algoritmo: Bubble-Sort\n\nTamanho da entrada: %d\nComparações feitas: %d\nTempo de execução : %.3f segundos\n\n--------------------------------------------------\n",tam,contador, (fim - inicio)/ (float) CLOCKS_PER_SEC);
 	for(int i=0; i<tam; i++)
-		fprintf(saidaB,"%s\n",VB[i]);
+		fprintf(saidaB,"%s\n",Vmuda[i]);
 	fclose(saidaB);
+
 
 	return 0;
 }
