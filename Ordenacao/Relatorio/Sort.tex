@@ -10,7 +10,7 @@
 
 \begin{center}
 
-\includegraphics[width=0.7\textwidth]{Ita-logo.png}
+\includegraphics[width=0.8\textwidth]{Ita-logo.png}
 
 {\Large \bf INSTITUTO TECNOLÓGICO DE AERONÁUTICA}
 
@@ -42,9 +42,9 @@ Leonardo Xavier Dantas (\href{mailto:leonardo.dantas.9092@ga.ita.br}{leonardo.da
 
 \quad Um gerador de \textit{string} de minha autoria com todas as letras do alfabeto, ambas maiúsculas e minúsculas em foi utilizado para testar os algorítimos.
 
-\quad Os códigos de \textit{QuickSort} e \textit{MergeSort} utilizados foram os fornecidos no Curso de CES-11, ambos de autoria original de Armando Gouveia, adaptados para receberem \textit{array} de \textit{string} e, no caso do MergeSort, foram feitas duas versões, sendo uma delas com o vetor temporário \textit{static}
+\quad Os códigos de \textit{QuickSort} e \textit{MergeSort} utilizados foram os fornecidos no Curso de CES-11, ambos de autoria original de Armando Gouveia, adaptados para receberem \textit{array} de \textit{string} e, no caso do MergeSort, foram feitas duas versões, sendo uma delas com o vetor temporário \textit{static}.
 
-\quad Foi criado um outro código, permitindo executar repetidamente os algorítimos com diferentes tamanhos de \textit{array}, coletando o tamanho do \textit{array}, o tempo de execução e o número de comparações
+\quad Foi criado um outro código, permitindo executar repetidamente os algorítimos com diferentes tamanhos de \textit{array}, coletando o tamanho do \textit{array}, o tempo de execução e o número de comparações.
 
 \section{Resultados}
 
@@ -69,54 +69,55 @@ QuickSort		& 1335410	& 52283883			\\
 
 \subsection{Relação entre tempo e comparação}
 
-\quad Com cada um dos três algorítimos, depois de diversos casos teste, traçaram-se gráficos com a relação entre o tempo de execução e o número de comparações, nessas mesmas figuras também foi traçada a reta de melhor aproximação, por meio do método da projeção. Esses gráfcos se encontram nas Figuras \ref{fig:ntb}, \ref{fig:ntm} e \ref{fig:ntq}
+\quad Com cada um dos três algorítimos, depois de diversos casos teste, traçaram-se gráficos com a relação entre o tempo de execução e o número de comparações, nessas mesmas figuras também foi traçada a reta de melhor aproximação, por meio do método da projeção. Esses gráfcos se encontram nas Figuras \ref{fig:ntb}, \ref{fig:ntm} e \ref{fig:ntq}.
 
 \quad Percebe-se que o tempo de execução e número de comparações segue uma relação linear, isso implica que o tempo de execução é $O(f(n))$ se e somente se o número de comparações for $O(f(n))$. 
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigTNB.png} 
+    \includegraphics[width=0.5\textwidth]{FigTNB.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas e o tempo de execução do \textit{BubbleSort}}
+\caption{Relação entre o número de comparações realizadas e o tempo de execução do \textit{BubbleSort}.}
 \label{fig:ntb}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigTNM.png} 
+    \includegraphics[width=0.5\textwidth]{FigTNM.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas e o tempo de execução do \textit{MergeSort}}
+\caption{Relação entre o número de comparações realizadas e o tempo de execução do \textit{MergeSort}.}
 \label{fig:ntm}
 \end{figure}
 
 \begin{figure}[H]
+\label{fig:ntq}
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigTNQ.png} 
+    \includegraphics[width=0.5\textwidth]{FigTNQ.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas e o tempo de execução do \textit{QuickSort}}
+\caption{Relação entre o número de comparações realizadas e o tempo de execução do \textit{QuickSort}.}
 \label{fig:ntq}
 \end{figure}
 
 \subsection{BubbleSort}
 
 \begin{table}[H]
-\caption{Tamanho de \textit{array} de \textit{string} de entrada, o tempo para a execução do \textit{BubbleSort} em segundos e o número de comparações necessárias para ordenar o vetor }
+\caption{Tamanho de \textit{array} de \textit{string} de entrada, o tempo para a execução do \textit{BubbleSort} em segundos e o número de comparações necessárias para ordenar o vetor.}
 \label{tab:db}
 \begin{center}
 \begin{tabular}{|c c c|}
 \hline
 Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 \hline
-1000 & 0.041 & 998001\\
-2000 & 0.181 & 3996001\\
-3000 & 0.393 & 8994001\\
-4000 & 0.702 & 15992001\\
-5000 & 1.100 & 24990001\\
-6000 & 1.592 & 35988001\\
-7000 & 2.149 & 48986001\\
-8000 & 2.854 & 63984001\\
-9000 & 3.542 & 80982001\\
-10000 & 4.487 & 99980001\\
+1000 & 0,041 & 998001\\
+2000 & 0,181 & 3996001\\
+3000 & 0,393 & 8994001\\
+4000 & 0,702 & 15992001\\
+5000 & 1,100 & 24990001\\
+6000 & 1,592 & 35988001\\
+7000 & 2,149 & 48986001\\
+8000 & 2,854 & 63984001\\
+9000 & 3,542 & 80982001\\
+10000 & 4,487 & 99980001\\
 \hline
 \end{tabular}
 \end{center}
@@ -126,17 +127,17 @@ Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigNB.png} 
+    \includegraphics[width=0.5\textwidth]{FigNB.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas pelo \textit{BubbleSort} e o tamanho da entrada}
+\caption{Relação entre o número de comparações realizadas pelo \textit{BubbleSort} e o tamanho da entrada.}
 \label{fig:nb}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigTB.png} 
+    \includegraphics[width=0.5\textwidth]{FigTB.png} 
 \end{center}
-\caption{Relação entre o tempo de execução do \textit{BubbleSort} e o tamanho da entrada}
+\caption{Relação entre o tempo de execução do \textit{BubbleSort} e o tamanho da entrada.}
 \label{fig:tb}
 \end{figure}
 
@@ -144,32 +145,32 @@ Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigBn2.png} 
+    \includegraphics[width=0.5\textwidth]{FigBn2.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas e o tamanho da entrada, com a função $f(x)=x^2$ evidenciada}
+\caption{Relação entre o número de comparações realizadas e o tamanho da entrada, com a função $f(x)=x^2$ evidenciada.}
 \label{fig:bOK}
 \end{figure}
 
 \subsection{MergeSort}
 
 \begin{table}[H]
-\caption{Tamanho de \textit{array} de \textit{string} de entrada, o tempo para a execução do \textit{MergeSort} em segundos e o número de comparações necessárias para ordenar o vetor}
+\caption{Tamanho de \textit{array} de \textit{string} de entrada, o tempo para a execução do \textit{MergeSort} em segundos e o número de comparações necessárias para ordenar o vetor.}
 \label{tab:dm}
 \begin{center}
 \begin{tabular}{|c c c|}
 \hline
 Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 \hline
-100000 & 0.217 & 1536691\\
-200000 & 0.460 & 3272186\\
-300000 & 0.709 & 5084573\\
-400000 & 0.966 & 6945165\\
-500000 & 1.387 & 8837351\\
-600000 & 1.497 & 10769256\\
-700000 & 1.827 & 12722702\\
-800000 & 2.038 & 14690740\\
-900000 & 2.460 & 16678844\\
-1000000 & 2.574 & 18674058\\
+100000 & 0,217 & 1536691\\
+200000 & 0,460 & 3272186\\
+300000 & 0,709 & 5084573\\
+400000 & 0,966 & 6945165\\
+500000 & 1,387 & 8837351\\
+600000 & 1,497 & 10769256\\
+700000 & 1,827 & 12722702\\
+800000 & 2,038 & 14690740\\
+900000 & 2,460 & 16678844\\
+1000000 & 2,574 & 18674058\\
 \hline
 \end{tabular}
 \end{center}
@@ -179,17 +180,17 @@ Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigNM.png} 
+    \includegraphics[width=0.5\textwidth]{FigNM.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas pelo \textit{MergeSort} e o tamanho da entrada}
+\caption{Relação entre o número de comparações realizadas pelo \textit{MergeSort} e o tamanho da entrada.}
 \label{fig:nm}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigTM.png} 
+    \includegraphics[width=0.5\textwidth]{FigTM.png} 
 \end{center}
-\caption{Relação entre o tempo de execução do \textit{MergeSort} e o tamanho da entrada}
+\caption{Relação entre o tempo de execução do \textit{MergeSort} e o tamanho da entrada.}
 \label{fig:tm}
 \end{figure}
 
@@ -197,30 +198,30 @@ Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigMnlogn.png} 
+    \includegraphics[width=0.5\textwidth]{FigMnlogn.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas e o tamanho da entrada, com a função $f(x)=x\log{(x)}$ evidenciada}
+\caption{Relação entre o número de comparações realizadas e o tamanho da entrada, com a função $f(x)=x\log{(x)}$ evidenciada.}
 \label{fig:mOK}
 \end{figure}
 
 \begin{table}[H]
-\caption{Comparação entre o número esperado de comparações e o número real seguindo $O(n\log{(n)})$}
+\caption{Comparação entre o número esperado de comparações seguindo $O(n\log{(n)})$, o número real do \textit{MergeSort} e a divisão entre os dois valores.}
 \label{tab:mOK}
 \begin{center}
-\begin{tabular}{|c c|}
+\begin{tabular}{|c c c|}
 \hline
-$n\log{(n)}$ & Comparações \\
+$n\log{(n)}$ & Comparações  & Divisão\\
 \hline
-1660964 & 1536691\\
-3521928 & 3272186\\
-5458380 & 5084573\\
-7443856 & 6945165\\
-9465784 & 8837351\\
-11516761 & 10769256\\
-13591896 & 12722702\\
-15687712 & 14690740\\
-17801608 & 16678844\\
-19931568 & 18674058\\
+1660964 & 1536691 & 1,081\\
+3521928 & 3272186 & 1,076\\
+5458380 & 5084573 & 1,073\\
+7443856 & 6945165 & 1,072\\
+9465784 & 8837351 & 1,071\\
+11516761 & 10769256 & 1,069\\
+13591896 & 12722702 & 1,068\\
+15687712 & 14690740 & 1,068\\
+17801608 & 16678844 & 1,067\\
+19931568 & 18674058 & 1,067\\
 \hline
 \end{tabular}
 \end{center}
@@ -229,7 +230,7 @@ $n\log{(n)}$ & Comparações \\
 \subsection{QuickSort}
 
 \begin{table}[H]
-\caption{Tamanho de \textit{array} de \textit{string} de entrada, o tempo para a execução do \textit{QuickSort} em segundos e o número de comparações necessárias para ordenar o vetor }
+\caption{Tamanho de \textit{array} de \textit{string} de entrada, o tempo para a execução do \textit{QuickSort} em segundos e o número de comparações necessárias para ordenar o vetor.}
 \label{tab:dq}
 \begin{center}
 \begin{tabular}{|c c c|}
@@ -255,37 +256,58 @@ Tamanho de \textit{array}	& Tempo (s)	& Comparações 	\\
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigNQ.png} 
+    \includegraphics[width=0.5\textwidth]{FigNQ.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas pelo \textit{QuickSort} e o tamanho da entrada}
+\caption{Relação entre o número de comparações realizadas pelo \textit{QuickSort} e o tamanho da entrada.}
 \label{fig:nq}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigTQ.png} 
+    \includegraphics[width=0.5\textwidth]{FigTQ.png} 
 \end{center}
-\caption{Relação entre o tempo de execução do \textit{QuickSort} e o tamanho da entrada}
+\caption{Relação entre o tempo de execução do \textit{QuickSort} e o tamanho da entrada.}
 \label{fig:tq}
 \end{figure}
 
-\quad Apesar de, no olhar, a relação exposta em \ref{fig:nq} parecer linear, quando se sobrepõe um gráfico semelhante com tamanhos de \textit{array} menores com o gráfico de $f(x)=x\log{(x)}$ obtêm-se a Figura \ref{fig:qOK}, que torna mais claro a relação entre as duas curvas. A figura, ainda assim, possui um ruído muito grande quando comparado à função esperada, isso se deve ao fato de apenas o caso médio e melhor caso do \textit{QuickSort} ser $O(n\log{(n)})$, enquanto o pior caso possui complexidade de $O(n^2))$, correspondendo aos picos observados.
+\quad Apesar de, no olhar, a relação exposta em \ref{fig:nq} parecer linear, quando se sobrepõe um gráfico semelhante com tamanhos de \textit{array} menores com o gráfico de $f(x)=x\log{(x)}$ obtêm-se a Figura \ref{fig:qOK}, que torna mais claro a relação entre as duas curvas. A figura, ainda assim, possui um ruído muito grande quando comparado à função esperada, isso se deve ao fato de apenas o caso médio e melhor caso do \textit{QuickSort} ser $O(n\log{(n)})$, enquanto o pior caso possui complexidade de $O(n^2))$, correspondendo aos picos observados. Ao se observar a Tabela \ref{tab:qOK}, pode se observar que, ignorando outros fatores menores assintoticamente a $n\log(n)$, a constante é de $(1,77\pm 0.07)$.
 
 \begin{figure}[H]
 \begin{center}
-    \includegraphics[width=0.7\textwidth]{FigQnlogn.png} 
+    \includegraphics[width=0.5\textwidth]{FigQnlogn.png} 
 \end{center}
-\caption{Relação entre o número de comparações realizadas e o tamanho da entrada, com a função $f(x)=x\log{(x)}$ evidenciada}
+\caption{Relação entre o número de comparações realizadas e o tamanho da entrada, com a função $f(x)=1,77\cdot x\log{(x)}$ evidenciada.}
 \label{fig:qOK}
 \end{figure}
+
+\begin{table}[H]
+\caption{Comparação entre o número esperado de comparações seguindo $O(n\log{(n)})$, o número real do \textit{QuickSort} e a divisão entre os dois valores.}
+\label{tab:qOK}
+\begin{center}
+\begin{tabular}{|c c c|}
+\hline
+$n\log{(n)}$ & Comparações  & Divisão\\
+\hline
+1660964 & 2813431 & 0,590\\
+3521928 & 5987814 & 0,588\\
+5458380 & 9267216 & 0,589\\
+7443856 & 13331229 & 0,558\\
+9465784 & 16357150 & 0,578\\
+11516761 & 20266377 & 0,568\\
+13591896 & 24379843 & 0,558\\
+15687712 & 29151141 & 0,538\\
+17801608 & 33478205 & 0,532\\
+19931568 & 36806554 & 0,542\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
 \section{Conclusão}
 
 \quad Após as analises feitas nesse relatório, pode-se concluir que a relação entre tempo e número de comparações é linear, porém, nem toda operação possui o mesmo tempo, uma vez que, o \textit{QuickSort}, apesar de possuir mais comparações do que o \textit{MergeSort}, possui tempo de execução menor, isso é decorrente do fato de que o \textit{MergeSort} copia as \textit{string} diversas vezes em \textit{array} auxiliar, sendo essa operação muito mais demorada.
 
 \quad Portanto, para o fim que esse relatório se propôs a analisar, ordenação de \textit{array} de \textit{string}, o \textit{QuickSort} é, em média, o melhor dentre os métodos analisados.
-
-
 
 \end{document}
 
