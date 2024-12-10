@@ -50,7 +50,7 @@ void RemoverMax(Lista * l){
 
 // da free na lista, liberando o espaco mallocado
 void Finalizar(Lista * l){
-	free(l);
+	free(l->vet);
 }
 
 // se estiver vazia -> n==0 logo retorna se n==0
@@ -87,8 +87,7 @@ bool Inserir(Lista * l, Tarefa * T){
 	//perceba que alem de transferir todos os elementos ao lado, esse for tambem ja aumenta a quantia de elementos na lista em l->n++
 	for(int i=l->n++; i>=ini; i--)
 		l->vet[i+1]=l->vet[i];
-	strcpy(l->vet[ini].nome,T->nome);
-	l->vet[ini].nP=T->nP;
+	l->vet[ini]=*T;
 	return true;
 }
         
@@ -169,6 +168,7 @@ int main() {
 
 
 	//fecha os arquivos de entrada e saida
+	Finalizar(&filaP);
 	fclose(entra);
 	fclose(saida);
 	return 0;
